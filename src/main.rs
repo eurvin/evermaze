@@ -45,7 +45,6 @@ fn model(app: &App) -> Model {
         .title(app.exe_name().unwrap())
         .size(WIDTH, HEIGHT)
         .view(view)
-        .key_pressed(key_pressed)
         .build()
         .unwrap();
 
@@ -120,19 +119,5 @@ impl Wall {
             y,
             rotation,
         }
-    }
-}
-
-fn key_pressed(_app: &App, model: &mut Model, key: Key) {
-    match key {
-        Key::Right => {
-            model.rot_adj += 0.1;
-        }
-        Key::Left => {
-            if model.rot_adj > 0.0 {
-                model.rot_adj -= 0.1;
-            }
-        }
-        _other_key => (),
     }
 }
