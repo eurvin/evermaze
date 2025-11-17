@@ -22,7 +22,6 @@ struct Model {
     walls: Vec<Wall>,
 }
 
-#[derive(Debug)]
 enum DiagonalLine {
     Forward,
     Backward,
@@ -101,7 +100,6 @@ fn update(_app: &App, model: &mut Model, _update: Update) {
     }
 }
 
-#[derive(Debug)]
 struct Wall {
     diagonal: DiagonalLine,
     x: f32,
